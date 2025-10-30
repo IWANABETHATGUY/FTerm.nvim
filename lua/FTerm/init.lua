@@ -52,6 +52,13 @@ function M.get_job_id()
   return t.terminal
 end
 
+---Check whether the window is valid
+---@param win number Window ID
+---@return boolean
+function M.is_win_valid()
+  return t.win and vim.api.nvim_win_is_valid(t.win)
+end
+
 ---To create a scratch (use and throw) terminal. Like those good ol' C++ build terminal.
 ---@param cfg Config
 function M.scratch(cfg)
